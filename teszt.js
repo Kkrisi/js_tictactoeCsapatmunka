@@ -3,16 +3,15 @@ function main(){
 
 }
 
-function Tesztek(){
+export function Tesztek(){
     vizszintesTeszt();
     fuggolegesTeszt();
     atloTeszt();
 }
 
 
-function vizszintesTeszt(){
-
-
+export function vizszintesTeszt(){
+    console.log("Még nem veszíthetek")
 }
 
 function fuggolegesTeszt(){

@@ -1,5 +1,6 @@
 import { KEPEK } from "./kepek.js";
 let kiJon = 0;
+import { vizszintesTeszt } from "./teszt.js";
 
 function letrehoz(meret, formObj) {
   const JATEKTER = document.querySelector("article > div");
@@ -127,7 +128,7 @@ function ellenoriz(meret, lista) {
   allapot += atlo_ell(meret, lista);
   const ALLAPOT_TOMB = allapot.split("@");
   //   console.log(allapot);
-  console.log(ALLAPOT_TOMB);
+  /*console.log(ALLAPOT_TOMB);*/
   if (meret == 3) {
     if (ALLAPOT_TOMB.indexOf("OOO") >= 0) {
       return true;
@@ -153,6 +154,8 @@ function vizszintes_ell(meret, lista) {
       szoveg += "@";
     }
   }
+  vizszintesTeszt()
+  
   return szoveg;
 }
 
