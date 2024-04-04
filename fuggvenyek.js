@@ -1,4 +1,5 @@
 import { KEPEK } from "./kepek.js";
+import { fuggolegesTeszt } from "./teszt.js";
 let kiJon = 0;
 
 function letrehoz(meret, formObj) {
@@ -156,7 +157,7 @@ function vizszintes_ell(meret, lista) {
   return szoveg;
 }
 
-function fuggoleges_ell(meret, lista) {
+export function fuggoleges_ell(meret, lista) {
   let szoveg = "";
   for (let index = 0; index < meret; index++) {
     for (let j = 0; j < meret * meret; j += parseInt(meret)) {
@@ -164,6 +165,8 @@ function fuggoleges_ell(meret, lista) {
     }
     szoveg += "@";
   }
+
+  console.log("Szöveg: "+szoveg);
   return szoveg;
 }
 
