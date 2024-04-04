@@ -10,8 +10,11 @@ export function Tesztek(){
 }
 
 
-export function vizszintesTeszt(){
-    console.log("Még nem veszíthetek")
+export function vizszintesTeszt(szoveg){
+        console.log(`Külső függvénnyel kinyert szoveg: ${szoveg}`);
+        
+
+        
 }
 
 function fuggolegesTeszt(){

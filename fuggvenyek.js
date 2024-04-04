@@ -128,7 +128,7 @@ function ellenoriz(meret, lista) {
   allapot += atlo_ell(meret, lista);
   const ALLAPOT_TOMB = allapot.split("@");
   //   console.log(allapot);
-  /*console.log(ALLAPOT_TOMB);*/
+  console.log(ALLAPOT_TOMB);
   if (meret == 3) {
     if (ALLAPOT_TOMB.indexOf("OOO") >= 0) {
       return true;
@@ -154,8 +154,8 @@ function vizszintes_ell(meret, lista) {
       szoveg += "@";
     }
   }
-  vizszintesTeszt()
-  
+  console.log(`Helyben kiolvasott szöveg ${szoveg}`)
+  vizszintesTeszt(szoveg);
   return szoveg;
 }
 
