@@ -1,4 +1,5 @@
 import { fuggoleges_ell} from "./fuggvenyek.js";
+import { vizszintes_el} from "./fuggvenyek.js";
 function main(){
     Tesztek();
 
@@ -12,7 +13,10 @@ export function Tesztek(){
 
 
 export function vizszintesTeszt(szoveg){
-        console.log(`Külső függvénnyel kinyert szoveg: ${szoveg}`);
+    let vart = ['O X', 'OOX', '  X', 'OO ', ' O ', 'XXX', 'OOX', 'XO '];
+    console.assert(
+        vart === vizszintes_el (meret,lista),
+        )
         
 
         
