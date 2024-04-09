@@ -1,7 +1,12 @@
 import { KEPEK } from "./kepek.js";
-import { fuggolegesTeszt } from "./teszt.js";
+import { Tesztek } from "./teszt.js"
+
+Tesztek();
+
+
+
 let kiJon = 0;
-import { vizszintesTeszt } from "./teszt.js";
+
 
 function letrehoz(meret, formObj) {
   const JATEKTER = document.querySelector("article > div");
@@ -16,6 +21,10 @@ function letrehoz(meret, formObj) {
   //   console.log(JATEKLISTA.length);
 }
 
+
+
+
+
 function jatekListaFeltolt(meret) {
   const LISTA = [];
   for (let index = 0; index < meret * meret; index++) {
@@ -23,6 +32,10 @@ function jatekListaFeltolt(meret) {
   }
   return LISTA;
 }
+
+
+
+
 
 function jatekMenet(meret, lista, formObj) {
   const KOCKA_ELEM = document.querySelectorAll(".kocka");
@@ -54,6 +67,10 @@ function jatekMenet(meret, lista, formObj) {
   }
 }
 
+
+
+
+
 function nyertAllapot(jelenlegi, palya) {
   const JATEKTER = document.querySelector(`.jatekter${palya}`);
   let txt = "";
@@ -62,6 +79,10 @@ function nyertAllapot(jelenlegi, palya) {
   }
   JATEKTER.innerHTML = txt;
 }
+
+
+
+
 
 function lepesekAllapot(obj, vege, dontetlen) {
   const LEPESEK_ELEM = document.querySelector("aside");
@@ -88,6 +109,10 @@ function lepesekAllapot(obj, vege, dontetlen) {
   }
 }
 
+
+
+
+
 export function jatekKezdese() {
   const FORM_ELEM = document.querySelector("form");
   const GOMB = document.querySelector("form > button");
@@ -109,11 +134,19 @@ export function jatekKezdese() {
   });
 }
 
+
+
+
+
 function gombKicserel() {
   const GOMB = document.querySelector("form > button");
   GOMB.id = "uj";
   GOMB.innerHTML = "Új játék!";
 }
+
+
+
+
 
 export function palya_valasztas() {
   const JATEKTER = document.querySelector("article > div");
@@ -122,6 +155,10 @@ export function palya_valasztas() {
       <option value="5">5x5</option>
       </select>`;
 }
+
+
+
+
 
 function ellenoriz(meret, lista) {
   let allapot = vizszintes_ell(meret, lista);
@@ -147,7 +184,11 @@ function ellenoriz(meret, lista) {
   }
 }
 
-function vizszintes_ell(meret, lista) {
+
+
+
+
+export function vizszintes_ell(meret, lista) {
   let szoveg = "";
   for (let index = 1; index <= lista.length; index++) {
     szoveg += lista[index - 1];
@@ -159,6 +200,10 @@ function vizszintes_ell(meret, lista) {
   vizszintesTeszt(szoveg);
   return szoveg;
 }
+
+
+
+
 
 export function fuggoleges_ell(meret, lista) {
   let szoveg = "";
@@ -173,7 +218,16 @@ export function fuggoleges_ell(meret, lista) {
   return szoveg;
 }
 
-function atlo_ell(meret, lista) {
+
+
+
+
+
+
+
+
+
+export function atlo_ell(meret, lista) {
   let szoveg = "";
   //   console.log(meret);
   // bal felső -> jobb alsó átló
@@ -190,5 +244,12 @@ function atlo_ell(meret, lista) {
     szoveg += lista[index];
   }
 
+  //console.log("Szöveg:",szoveg); // Teszteléshez
+
   return szoveg;
 }
+
+
+
+
+
