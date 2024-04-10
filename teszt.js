@@ -1,6 +1,22 @@
 import { fuggoleges_ell, vizszintes_ell, atlo_ell} from "./fuggvenyek.js";
 
+//---------------------- Ellenőrizendők ----------------------
+// 1. Üres lista
+// 2. Csupa x
+// 3. Csupa o
+// 4. Általános, nincs győzelem, de nincs minden kitöltve
+// 5. Általános, van győzelem, de nincs minden kitöltve
+// 6. Általános, nincs győzelem, minden ki van töltve
+// 7. Általános, van győzelem, minden ki van töltve
 
+// 8.   _ _ x       Következő sorba folytatódik
+//      x x _
+
+// 9.   _ o _       Következő oszlopba folytatódik
+//      o _ _
+//      o _ _
+
+  
 
 
 
@@ -11,15 +27,156 @@ export function Tesztek(){
 }
 
 
-export function vizszintesTeszt(szoveg){
-    let vart = ['O X', 'OOX', '  X', 'OO ', ' O ', 'XXX', 'OOX', 'XO '];
-    console.assert(
-        vart === vizszintes_ell(meret,lista),
-        )
-        
-
+export function vizszintesTeszt(){
+    console.log("Az 'vizSzintes' életbe lépett.");
+    vizszintesTesztekUtasitasokAlapjan();
         
 }
+
+function vizszintesTesztekUtasitasokAlapjan(){
+    vizszintesUresLista(); 
+    vizszintesCsupaX();
+    vizszintesCsupaO();
+    vizszintesNincsGyozelemDeNincsMindenKitoltve();
+    vizszintesVanGyozelemDeNincsMindenKitoltve();
+    vizszintesNincsGyozelemViszontMindKivanToltve();
+    vizszintesVanGyozelemMindkivanToltve();
+    vizszintesKovetkezoSorbanFolytatodik();
+}
+
+function vizszintesUresLista(){
+        let meret = 3;
+        let lista = [' ', ' ', ' ',
+                    ' ', ' ', ' ',
+                    ' ', ' ', ' '];
+
+        let vart = '   @   @   @';
+
+        console.assert(
+            vart === vizszintes_ell(meret,lista),
+            "%o",
+            `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+            "A várt eredmény nem stimmel -- Teszt_1 --"
+        ); 
+      
+       
+    
+}
+
+function vizszintesCsupaX(){
+    let meret = 3;
+    let lista = ['X', 'X', 'X',
+                ' ', ' ', ' ',
+                ' ', ' ', ' '];
+
+    let vart = 'XXX@   @   @';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_2 --"
+    ); 
+}
+
+function vizszintesCsupaO(){
+    let meret = 3;
+    let lista = ['O', 'O', 'O',
+                ' ', ' ', ' ',
+                ' ', ' ', ' '];
+
+    let vart = 'OOO@   @   @';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_3 --"
+    ); 
+}
+
+function vizszintesNincsGyozelemDeNincsMindenKitoltve(){
+    let meret = 3;
+    let lista = [' ', 'O', 'O',
+                ' ', ' ', ' ',
+                ' ', 'X', 'X'];
+
+    let vart = ' OO@   @ XX@';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_4 --"
+    ); 
+}
+
+function vizszintesVanGyozelemDeNincsMindenKitoltve(){
+    let meret = 3;
+    let lista = [' ', 'O', 'O',
+                ' ', ' ', ' ',
+                'X', 'X', 'X'];
+
+    let vart = ' OO@   @XXX@';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_5 --"
+    ); 
+}
+
+function vizszintesNincsGyozelemViszontMindKivanToltve() {
+    let meret = 3;
+    let lista = ['X','O','O',
+                 'X', 'O','X',
+                 'O', 'X', 'X'
+            ];
+
+    let vart = 'XOO@XOX@OXX@';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_6 --"
+    ); 
+}
+
+function vizszintesVanGyozelemMindkivanToltve(){
+    let meret = 3;
+    let lista = ['X','O','O',
+                 'O', 'O','X',
+                 'X', 'X', 'X'
+            ];
+
+    let vart = 'XOO@OOX@XXX@';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_7 --"
+    ); 
+}
+function vizszintesKovetkezoSorbanFolytatodik(){
+    let meret = 3;
+    let lista = ['','','X',
+                 'X', 'X','',
+                 '', '', ''
+            ];
+
+    let vart = 'X@XX@@';
+
+    console.assert(
+        vart === vizszintes_ell(meret,lista),
+        "%o",
+        `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === atlo_ell(meret,lista)}`,
+        "A várt eredmény nem stimmel -- Teszt_8 --"
+    ); 
+}
+
 
 export function fuggolegesTeszt(){
 
@@ -170,7 +327,7 @@ export function fuggolegesTeszt(){
                     ' ', 'X', ' ',
                     '', ' ', 'X'];
 
-        let vart = '   @XX @X@';
+        let vart = '  @XX @  X@';
 
         console.assert(
             vart === fuggoleges_ell(meret,lista),
@@ -193,58 +350,6 @@ export function fuggolegesTeszt(){
     teszt_8();
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//---------------------- Ellenőrizendők ----------------------
-// 1. Üres lista
-// 2. Csupa x
-// 3. Csupa o
-// 4. Általános, nincs győzelem, de nincs minden kitöltve
-// 5. Általános, van győzelem, de nincs minden kitöltve
-// 6. Általános, nincs győzelem, minden ki van töltve
-// 7. Általános, van győzelem, minden ki van töltve
-
-// 8.   _ _ x       Következő sorba folytatódik
-//      x x _
-
-// 9.   _ o _       Következő oszlopba folytatódik
-//      o _ _
-//      o _ _
-
-    //  By: Kristóf
 
 
 export function atloTeszt(){

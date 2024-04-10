@@ -197,7 +197,7 @@ export function vizszintes_ell(meret, lista) {
     }
   }
 
-  //console.log("Szöveg:",szoveg); // Teszteléshez
+  console.log("Szöveg:",szoveg); // Teszteléshez
 
   return szoveg;
 }
@@ -215,7 +215,7 @@ export function fuggoleges_ell(meret, lista) {
     szoveg += "@";
   }
 
-  //console.log("Szöveg:",szoveg); // Teszteléshez
+  console.log("Szöveg:",szoveg); // Teszteléshez
 
   return szoveg;
 }
