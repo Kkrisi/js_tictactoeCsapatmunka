@@ -196,8 +196,9 @@ export function vizszintes_ell(meret, lista) {
       szoveg += "@";
     }
   }
-  console.log(`Helyben kiolvasott szöveg ${szoveg}`)
-  vizszintesTeszt(szoveg);
+
+  //console.log("Szöveg:",szoveg); // Teszteléshez
+
   return szoveg;
 }
 
@@ -214,7 +215,8 @@ export function fuggoleges_ell(meret, lista) {
     szoveg += "@";
   }
 
-  console.log("Szöveg: "+szoveg);
+  //console.log("Szöveg:",szoveg); // Teszteléshez
+
   return szoveg;
 }
 
