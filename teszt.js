@@ -1,4 +1,6 @@
-import { fuggoleges_ell, vizszintes_ell, atlo_ell} from "./fuggvenyek.js";
+import { fuggoleges_ell, vizszintes_ell, atlo_ell, jatekListaFeltolt} from "./fuggvenyek.js";
+
+
 
 //---------------------- Ellenőrizendők ----------------------
 // 1. Üres lista
@@ -19,11 +21,11 @@ import { fuggoleges_ell, vizszintes_ell, atlo_ell} from "./fuggvenyek.js";
   
 
 
-
 export function Tesztek(){
     atloTeszt();
     fuggolegesTeszt();
     vizszintesTeszt();
+    jatekListaFeltolt();
 }
 
 
@@ -178,6 +180,39 @@ function vizszintesKovetkezoSorbanFolytatodik(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function fuggolegesTeszt(){
 
     console.log("Az 'fuggolegesTeszt' életbe lépett.");
@@ -196,7 +231,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- Teszt_1 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_1 --"
         ) // Sikeres!
     }
 
@@ -215,7 +250,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_2 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_2 --"
         ) // Sikeres!
     }
 
@@ -234,7 +269,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_3 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_3 --"
         ) // Sikeres!
     }
 
@@ -253,7 +288,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_4 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_4 --"
         ) // Sikeres!
     }
 
@@ -272,7 +307,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_5 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_5 --"
         ) // Sikeres!
     }
 
@@ -291,7 +326,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_6 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_6 --"
         ) // Sikeres!
     }
 
@@ -311,7 +346,7 @@ export function fuggolegesTeszt(){
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_7 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_7 --"
         ) // Sikeres!
     }
 
@@ -323,17 +358,17 @@ export function fuggolegesTeszt(){
     //      o _ _
     function teszt_8(){
         let meret = 3;
-        let lista = ['', 'X', '',
+        let lista = [' ', ' ', 'X',
                     ' ', 'X', ' ',
-                    '', ' ', 'X'];
+                    ' ', 'X', ' '];
 
-        let vart = '  @XX @  X@';
+        let vart = '   @ XX@X  @';
 
         console.assert(
             vart === fuggoleges_ell(meret,lista),
             "%o",
             `meret: ${meret}, lista: ${lista}, várt: ${vart}, eredmény: ${vart === fuggoleges_ell(meret,lista)}`,
-            "A várt eredmény nem stimmel -- atloTeszt_8 --"
+            "A várt eredmény nem stimmel -- fuggolegesTeszt_8 --"
         ) // Sikeres!
     }
 
@@ -350,6 +385,37 @@ export function fuggolegesTeszt(){
     teszt_8();
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export function atloTeszt(){
@@ -544,3 +610,33 @@ export function atloTeszt(){
     teszt_8();
     teszt_9();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+export function jatekListaFeltoltTeszt(){
+    console.log("Az 'jatekListaFeltoltTeszt' életbe lépett.");
+}
+*/
